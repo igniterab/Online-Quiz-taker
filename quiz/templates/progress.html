@@ -4,13 +4,14 @@
 {% load quiz_tags %}
 
 {% block title %} {% trans "Progress Page" %} {% endblock %}
+
 {% block description %} {% trans "User Progress Page" %} {% endblock %}
 
 {% block content %}
 
   {% if cat_scores %}
-
-  <h1>{% trans "Question Category Scores" %}</h1>
+  <br><br>
+  <h1>{% trans "Your Categorical Scores" %}</h1>
 
   <table class="table table-bordered table-striped">
 
@@ -18,8 +19,8 @@
 	  <tr>
 		<th>{% trans "Category" %}</th>
 		<th>{% trans "Correctly answererd" %}</th>
-		<th>{% trans "Incorrect" %}</th>
-		<th>%</th>
+		<th>{% trans "Total Questions" %}</th>
+		<th>% Obtained</th>
 	  </tr>
 	</thead>
 
@@ -46,10 +47,10 @@
   {% if exams %}
 
   <hr>
-
+  <br><br>
   <h1>{% trans "Previous exam papers" %}</h1>
   <p class="lead">
-	{% trans "Below are the results of exams that you have sat." %}
+	{% trans "Below are the results of exams that you have attempted." %}
   </p>
 
   <table class="table table-bordered table-striped">
@@ -57,9 +58,9 @@
 	<thead>
 	  <tr>
 		<th>{% trans "Quiz Title" %}</th>
-		<th>{% trans "Score" %}</th>
-		<th>{% trans "Possible Score" %}</th>
-		<th>%</th>
+		<th>{% trans "Your Score" %}</th>
+		<th>{% trans "Max Possible Score" %}</th>
+		<th>% Obtained</th>
 	  </tr>
 	</thead>
 

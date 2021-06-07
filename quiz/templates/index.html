@@ -1,11 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>This is my index page</h1>
+<br><br>
+
 {% if user.is_authenticated %}
-    <p>Username: {{user.username}}</p>
-    <p>Name: {{user.first_name}} {{user.last_name}}</p>
-    <p>Email: {{user.email}}</p>
+
+<center><h1>Welcome {{user.username}} , try some quizzes and check your score you would learn a lot by doing these quizzes.</h1>
+    <p>You can Always check your score again and again</p></center>
+  
+  
+
+{% else %}
+
+<center><h1>Welcome to Quizit now take part in various quizzes and check your results immediately.</h1>
+    <p>You can Always check your score again and again</p>
+    <br>
+    <br>
+
+    <h4>If you are not provided with the login credntials by your department , try contacting them for the same or give it a try using dummyuser as username and password as pass@1234.</h4>
+    </center>
+
 {% endif %}
+
     
 {% endblock  %}

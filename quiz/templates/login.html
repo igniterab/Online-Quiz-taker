@@ -1,6 +1,7 @@
 {% extends "base.html" %} {% block content %}
 
 <div class="col-md-6 offset-md-3">
+    <br><br>
     <h1 class="text-center">Login</h1>
     <form method="POST">
         {% csrf_token %}
@@ -10,6 +11,7 @@
         <div class="form-group">
             <input type="password" class="form-control" placeholder=" Enter Password" name="password">
         </div>
+        <p>Try contacting your dept for credentials or try using dummyuser as username and password as pass@1234</p>
         <button type="submit" class="btn btn-primary">Login</button>
     </form>
 </div>

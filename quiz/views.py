@@ -1,5 +1,4 @@
 import random
-
 from django.contrib.auth.decorators import login_required, permission_required
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import get_object_or_404, render
@@ -33,6 +32,7 @@ class SittingFilterTitleMixin(object):
 class QuizListView(ListView):
     model = Quiz
     # @login_required
+
     def get_queryset(self):
         queryset = super(QuizListView, self).get_queryset()
         return queryset.filter(draft=False)
@@ -109,7 +109,7 @@ class QuizMarkingList(QuizMarkerMixin, SittingFilterTitleMixin, ListView):
             queryset = queryset.filter(user__username__icontains=user_filter)
 
         return queryset
-    
+
     class Meta:
         pass
 
@@ -235,8 +235,6 @@ class QuizTake(FormView):
         return render(self.request, 'result.html', results)
 
 
-
-
 def index(request):
     return render(request, 'index.html', {})
 
@@ -263,4 +261,3 @@ def logout_user(request):
     messages.success(request, 'You have been logged out!')
     print('logout function working')
     return redirect('login')
-

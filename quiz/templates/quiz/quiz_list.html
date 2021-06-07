@@ -3,9 +3,10 @@
 {% load quiz_tags %}
 {% block title %}{% trans "All Quizzes" %}{% endblock %}
 
-{% block content %}
+{% block content %}<br><br>
 <h2>{% trans "List of quizzes" %}</h2>
     {% if quiz_list %}
+	<br><br>
 		<table class="table table-bordered table-striped">
 
 		  <thead>
